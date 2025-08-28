@@ -1,6 +1,6 @@
 ## Hi there, I'm CJ 👋
 
-- 👀 I'm currently working on [PFConnect](https://pfconnect.online/).
+- 👀 I'm currently working on [PFConnect](https://pfconnect.online/) & Cephie.
 - 🐽 I’m looking to collaborate on open source or any other projects!
 
 <h3 align="left">Connect with me</h3>
