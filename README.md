@@ -1,6 +1,6 @@
 ## Hi there, I'm CJ 👋
 
-- 👀 I'm currently working on [PFConnect](https://pfconnect.online/) & [Cephie](https://github.com/cephie-org).
+- I'm currently working on [PFConnect](https://pfconnect.online/) & [PFControl](https://control.pfconnect.online).
 
 <h3 align="left">Connect with me</h3>
 <p align="left">
@@ -10,7 +10,7 @@
 
 
 <details>
-  <summary><b>💡 My Skillset</b></summary>
+  <summary><b> My Skillset</b></summary>
   <br>
   <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"/>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
