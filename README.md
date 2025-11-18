@@ -1,7 +1,5 @@
 ## Hi there, I'm CJ 👋
 
-- I'm currently working on [PFConnect](https://pfconnect.online/) & [PFControl](https://control.pfconnect.online).
-
 <h3 align="left">Connect with me</h3>
 <p align="left">
 <a href="https://discord.com/users/712684467210289204" target="_blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="798485492621770792" height="30" width="40" /></a>
