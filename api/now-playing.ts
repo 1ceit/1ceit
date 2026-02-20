@@ -26,7 +26,7 @@ export default {
 
     // If `open` param is present, attempt redirect
     if (url.searchParams.has("open")) {
-      const location = item?.external_urls?.spotify;
+      const location = item?.external_urls?.spotify || "https://github.api.1ceit.com";
 
       if (location) {
         return Response.redirect(location, 302);
