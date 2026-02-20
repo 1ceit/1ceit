@@ -7,9 +7,10 @@ export interface Props {
   fileName: string;
   language: string;
   iconUrl: string;
+  gitUrl?: string;
 }
 
-export const NowCoding = ({ isCoding, fileName, language, iconUrl }: Props) => {
+export const NowCoding = ({ isCoding, fileName, language, iconUrl, gitUrl }: Props) => {
 
   return html`
     <${ReadmeImg} width="540" height="64">
@@ -22,6 +23,7 @@ export const NowCoding = ({ isCoding, fileName, language, iconUrl }: Props) => {
     }}
       >
         <img src="${iconUrl}" width="48" height="48" style=${{ borderRadius: 3, marginLeft: 16 }} />
+        ${gitUrl ? html`<a href="${gitUrl}" target="_blank" style=${{ textDecoration: "none" }}>` : ''}
         <div
           style=${{
       display: "flex",
@@ -38,6 +40,7 @@ export const NowCoding = ({ isCoding, fileName, language, iconUrl }: Props) => {
             ${isCoding ? `VS Code • ${language}` : "Visual Studio Code"}
           </${Text}>
         </div>
+        ${gitUrl ? html`</a>` : ''}
       </div>
     </${ReadmeImg}>
   `;

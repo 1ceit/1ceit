@@ -12,11 +12,12 @@ export default {
         }
 
         try {
-            const data = await request.json() as { fileName: string, language: string };
+            const data = await request.json() as { fileName: string, language: string, gitUrl?: string };
 
             await kv.set('vscode_status', {
                 fileName: data.fileName,
                 language: data.language,
+                gitUrl: data.gitUrl,
                 updatedAt: Date.now()
             });
 

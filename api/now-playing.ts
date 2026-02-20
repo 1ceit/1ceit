@@ -22,7 +22,7 @@ export default {
     } = await nowPlaying();
     mark("nowPlaying done");
 
-    const url = new URL(request.url, "https://status.nmoo.dev/");
+    const url = new URL(request.url, "https://spotify.api.1ceit.com");
 
     // If `open` param is present, attempt redirect
     if (url.searchParams.has("open")) {

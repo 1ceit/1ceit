@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import * as https from 'https';
+import { simpleGit } from 'simple-git';
 
 let statusBarItem: vscode.StatusBarItem;
 let updateInterval: NodeJS.Timeout | undefined;
@@ -26,7 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
     updateInterval = setInterval(sendUpdate, 5 * 60 * 1000);
 }
 
-function sendUpdate() {
+async function sendUpdate() {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
         return;
@@ -44,8 +45,30 @@ function sendUpdate() {
         return;
     }
 
+    let gitUrl: string | undefined = undefined;
     try {
-        const data = JSON.stringify({ fileName, language });
+        const workspaceFolders = vscode.workspace.workspaceFolders;
+        if (workspaceFolders && workspaceFolders.length > 0) {
+            const git = simpleGit(workspaceFolders[0].uri.fsPath);
+            const remotes = await git.getRemotes(true);
+            const origin = remotes.find(r => r.name === 'origin') || remotes[0];
+            if (origin && origin.refs.fetch) {
+                let url = origin.refs.fetch;
+                if (url.startsWith('git@')) {
+                    url = url.replace(':', '/').replace('git@', 'https://');
+                }
+                if (url.endsWith('.git')) {
+                    url = url.slice(0, -4);
+                }
+                gitUrl = url;
+            }
+        }
+    } catch (e) {
+        // Ignore git errors
+    }
+
+    try {
+        const data = JSON.stringify({ fileName, language, gitUrl });
         const url = new URL(apiUrl);
 
         const req = https.request({

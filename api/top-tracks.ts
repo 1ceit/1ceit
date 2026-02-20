@@ -9,7 +9,7 @@ import { toBase64 } from "../src/utils/encoding.ts";
 
 export default {
   async fetch(request: Request) {
-    const url = new URL(request.url, "https://status.nmoo.dev/");
+    const url = new URL(request.url, "https://spotify.api.1ceit.com");
     const i = url.searchParams.get("i");
 
     const index = Number.parseInt(i ?? "", 10);

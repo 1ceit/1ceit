@@ -93,7 +93,7 @@ const css = `
   img:not([src]) {
     content: url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
     background: #FFF;
-    border: 1px solid #e1e4e8;
+    border: 1px solid #e1e5e9ff;
   }
 
   img {
@@ -124,7 +124,7 @@ const css = `
     width: 100%;
     height: 6px;
     transform-origin: left center;
-    background-color: #24292e;
+    background-color: #bbbdbeff;
     animation: progress calc(var(--duration) * 1ms) linear;
     animation-delay: calc(var(--progress) * -1ms);
   }
