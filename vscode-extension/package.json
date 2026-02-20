@@ -1,0 +1,50 @@
+{
+    "name": "vscode-now-coding",
+    "displayName": "Now Coding",
+    "description": "Live status for GitHub README",
+    "publisher": "1ceit",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "now-coding.start",
+                "title": "Start Now Coding"
+            }
+        ],
+        "configuration": {
+            "title": "Now Coding",
+            "properties": {
+                "nowCoding.apiUrl": {
+                    "type": "string",
+                    "default": "https://spotify.api.1ceit.com/api/vscode-status",
+                    "description": "The URL of your Vercel API endpoint for VS Code Status"
+                },
+                "nowCoding.apiSecret": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The secret token for your Vercel API endpoint"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.80.0",
+        "@types/node": "18.x",
+        "typescript": "^5.1.3"
+    }
+}

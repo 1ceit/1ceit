@@ -1,0 +1,39 @@
+{
+  "name": "natemoo-re",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Github profile",
+  "main": "index.js",
+  "scripts": {
+    "start": "vercel dev",
+    "setup": "node generateRefreshToken.ts"
+  },
+  "dependencies": {
+    "@vercel/kv": "^3.0.0",
+    "@vercel/node": "^5.6.3",
+    "htm": "^3.1.1",
+    "preact-render-to-string": "^6.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.11",
+    "@types/spotify-api": "^0.0.25",
+    "open": "^7.2.1",
+    "rolldown": "1.0.0-rc.4",
+    "vercel": "^50.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natemoo-re/natemoo-re.git"
+  },
+  "keywords": [],
+  "author": "Nate Moore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/natemoo-re/natemoo-re/issues"
+  },
+  "homepage": "https://github.com/natemoo-re/natemoo-re#readme",
+  "volta": {
+    "node": "22.22.0"
+  }
+}
