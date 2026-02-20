@@ -70,8 +70,7 @@ export const Player = ({
               </${Text}>
             </div>
             ${track && progress != null && duration ? html`
-              <${Text} color="gray" size="small" style=${{ fontSize: "12px", marginBottom: "2px", marginRight: "16px" }}>
-                ${formatTime(progress)} / ${formatTime(duration)}
+              <${Text} class="timestamp-live ${isPlaying ? 'playing' : 'paused'}" color="gray" size="small" style=${{ fontSize: "12px", marginBottom: "2px", marginRight: "16px", "--start-seconds": Math.floor(progress / 1000), "--total-seconds": Math.floor(duration / 1000), "--remaining-seconds": Math.floor(duration / 1000) - Math.floor(progress / 1000), "--duration-string": `"${formatTime(duration)}"` }}>
               </${Text}>
             ` : ''}
           </div>
@@ -141,6 +140,34 @@ const css = `
 
   #cover:not([src]) {
     box-shadow: none;
+  }
+
+  @property --elapsed-seconds {
+    syntax: '<integer>';
+    inherits: false;
+    initial-value: 0;
+  }
+
+  @counter-style pad-seconds {
+    system: numeric;
+    symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+    pad: 2 "0";
+  }
+
+  @keyframes tick-seconds {
+    from { --elapsed-seconds: var(--start-seconds); }
+    to { --elapsed-seconds: var(--total-seconds); }
+  }
+
+  .timestamp-live {
+    --minute-calc: round(down, calc(var(--elapsed-seconds) / 60), 1);
+    --second-calc: mod(var(--elapsed-seconds), 60);
+    counter-reset: minute-counter var(--minute-calc) second-counter var(--second-calc);
+    animation: tick-seconds calc(var(--remaining-seconds) * 1s) linear forwards;
+  }
+
+  .timestamp-live::after {
+    content: counter(minute-counter) ":" counter(second-counter, pad-seconds) " / " var(--duration-string);
   }
 
   @keyframes progress {
