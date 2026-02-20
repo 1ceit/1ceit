@@ -6,36 +6,10 @@ export interface Props {
   isCoding: boolean;
   fileName: string;
   language: string;
+  iconUrl: string;
 }
 
-export const NowCoding = ({ isCoding, fileName, language }: Props) => {
-  const iconMap: Record<string, string> = {
-    javascript: 'js',
-    typescript: 'ts',
-    javascriptreact: 'jsx',
-    typescriptreact: 'tsx',
-    python: 'python',
-    java: 'java',
-    c: 'c',
-    cpp: 'cpp',
-    csharp: 'csharp',
-    go: 'go',
-    rust: 'rust',
-    html: 'html',
-    css: 'css',
-    scss: 'scss',
-    markdown: 'markdown',
-    php: 'php',
-    ruby: 'ruby',
-    swift: 'swift',
-    vue: 'vue',
-    svelte: 'svelte',
-    dart: 'dart',
-    json: 'json'
-  };
-
-  const iconId = isCoding && language ? (iconMap[language.toLowerCase()] || 'vscode') : 'vscode';
-  const iconUrl = `https://raw.githubusercontent.com/iCrawl/discord-vscode/master/assets/icons/${iconId}.png`;
+export const NowCoding = ({ isCoding, fileName, language, iconUrl }: Props) => {
 
   return html`
     <${ReadmeImg} width="540" height="64">

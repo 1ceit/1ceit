@@ -18,11 +18,43 @@ export default {
             language = status.language;
         }
 
+        const iconMap: Record<string, string> = {
+            javascript: 'js',
+            typescript: 'ts',
+            javascriptreact: 'jsx',
+            typescriptreact: 'tsx',
+            python: 'python',
+            java: 'java',
+            c: 'c',
+            cpp: 'cpp',
+            csharp: 'csharp',
+            go: 'go',
+            rust: 'rust',
+            html: 'html',
+            css: 'css',
+            scss: 'scss',
+            markdown: 'markdown',
+            php: 'php',
+            ruby: 'ruby',
+            swift: 'swift',
+            vue: 'vue',
+            svelte: 'svelte',
+            dart: 'dart',
+            json: 'json'
+        };
+
+        const iconId = isCoding && language ? (iconMap[language.toLowerCase()] || 'vscode') : 'vscode';
+        const rawIconUrl = `https://raw.githubusercontent.com/iCrawl/discord-vscode/master/assets/icons/${iconId}.png`;
+
+        const iconBuf = await fetch(rawIconUrl).then(res => res.arrayBuffer());
+        const iconBase64 = `data:image/png;base64,${Buffer.from(iconBuf).toString('base64')}`;
+
         const text = render(
             html`<${NowCoding}
         isCoding=${isCoding}
         fileName=${fileName}
         language=${language}
+        iconUrl=${iconBase64}
       />`
         );
 
