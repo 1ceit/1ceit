@@ -12,19 +12,19 @@ export const NowCoding = ({ isCoding, fileName, language }: Props) => {
   const iconMap: Record<string, string> = {
     javascript: 'js',
     typescript: 'ts',
-    javascriptreact: 'react',
-    typescriptreact: 'react',
-    python: 'py',
+    javascriptreact: 'jsx',
+    typescriptreact: 'tsx',
+    python: 'python',
     java: 'java',
     c: 'c',
     cpp: 'cpp',
-    csharp: 'cs',
+    csharp: 'csharp',
     go: 'go',
     rust: 'rust',
     html: 'html',
     css: 'css',
-    scss: 'sass',
-    markdown: 'md',
+    scss: 'scss',
+    markdown: 'markdown',
     php: 'php',
     ruby: 'ruby',
     swift: 'swift',
@@ -35,6 +35,7 @@ export const NowCoding = ({ isCoding, fileName, language }: Props) => {
   };
 
   const iconId = isCoding && language ? (iconMap[language.toLowerCase()] || 'vscode') : 'vscode';
+  const iconUrl = `https://raw.githubusercontent.com/iCrawl/discord-vscode/master/assets/icons/${iconId}.png`;
 
   return html`
     <${ReadmeImg} width="540" height="64">
@@ -46,7 +47,7 @@ export const NowCoding = ({ isCoding, fileName, language }: Props) => {
       paddingLeft: 4,
     }}
       >
-        <img src="https://skillicons.dev/icons?i=${iconId}" width="48" height="48" style=${{ borderRadius: 3, marginLeft: 16 }} />
+        <img src="${iconUrl}" width="48" height="48" style=${{ borderRadius: 3, marginLeft: 16 }} />
         <div
           style=${{
       display: "flex",
