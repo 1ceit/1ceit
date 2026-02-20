@@ -31,7 +31,7 @@
             "properties": {
                 "nowCoding.apiUrl": {
                     "type": "string",
-                    "default": "https://spotify.api.1ceit.com/api/vscode-status",
+                    "default": "https://github.api.1ceit.com/api/vscode-status",
                     "description": "The URL of your Vercel API endpoint for VS Code Status"
                 },
                 "nowCoding.apiSecret": {

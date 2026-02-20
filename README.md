@@ -1,7 +1,7 @@
 # Hey, I'm CJ!
 
 <div align="center">
-  <a href="https://spotify.api.1ceit.com/api/now-playing?open"><img src="https://spotify.api.1ceit.com/api/now-playing?v=1" width="50%" alt="Now Playing on Spotify"/></a><a href="https://spotify.api.1ceit.com/api/now-coding?open"><img src="https://spotify.api.1ceit.com/api/now-coding?v=1" width="49%" alt="Now Coding in VS Code"/></a>
+  <a href="https://github.api.1ceit.com/api/now-playing?open"><img src="https://github.api.1ceit.com/api/now-playing?v=1" width="50%" alt="Now Playing on Spotify"/></a><a href="https://github.api.1ceit.com/api/now-coding?open"><img src="https://github.api.1ceit.com/api/now-coding?v=1" width="49%" alt="Now Coding in VS Code"/></a>
 </div>
 
 ***
@@ -24,5 +24,5 @@
 </p>
 
 <p align="left">
-  <img src="https://spotify.api.1ceit.com/api/views?v=1" alt="Profile Views" />
+  <img src="https://github.api.1ceit.com/api/views?v=1" alt="Profile Views" />
 </p>

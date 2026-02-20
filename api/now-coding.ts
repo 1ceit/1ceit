@@ -7,7 +7,7 @@ export default {
     async fetch(request: Request) {
         const status = await kv.get<{ fileName: string, language: string, gitUrl?: string, isIdle?: boolean, updatedAt: number }>('vscode_status');
 
-        const url = new URL(request.url, "https://spotify.api.1ceit.com");
+        const url = new URL(request.url, "https://github.api.1ceit.com");
         if (url.searchParams.has("open")) {
             if (status && status.gitUrl) {
                 return Response.redirect(status.gitUrl, 302);
@@ -25,7 +25,7 @@ export default {
             isCoding = true;
             fileName = status.fileName;
             language = status.language;
-            gitUrl = status.gitUrl ?? "";
+            gitUrl = status.gitUrl ?? "https://github.api.1ceit.com";
         }
 
         const iconMap: Record<string, string> = {
