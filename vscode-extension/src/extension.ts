@@ -20,8 +20,12 @@ export function activate(context: vscode.ExtensionContext) {
     // Send update immediately
     sendUpdate();
 
-    // Listen for changes
-    context.subscriptions.push(vscode.window.onDidChangeActiveTextEditor(sendUpdate));
+    // Listen for window focus changes (important if they have multiple VS Code instances open)
+    context.subscriptions.push(vscode.window.onDidChangeWindowState((e) => {
+        if (e.focused) {
+            sendUpdate();
+        }
+    }));
 
     // Set interval to update every 5 minutes if editor hasn't changed (to keep status 'active' in KV)
     updateInterval = setInterval(sendUpdate, 5 * 60 * 1000);
@@ -29,7 +33,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 async function sendUpdate() {
     const editor = vscode.window.activeTextEditor;
+
+    // If no editor is open, send an explicit idle status
     if (!editor) {
+        sendPayload({ isIdle: true });
         return;
     }
 
@@ -67,8 +74,21 @@ async function sendUpdate() {
         // Ignore git errors
     }
 
+    sendPayload({ fileName, language, gitUrl, isIdle: false });
+}
+
+function sendPayload(payload: any) {
+    const config = vscode.workspace.getConfiguration('nowCoding');
+    const apiUrl = config.get<string>('apiUrl');
+    const apiSecret = config.get<string>('apiSecret');
+
+    if (!apiUrl || !apiSecret) {
+        console.log('Now Coding: Missing API URL or API Secret in settings.');
+        return;
+    }
+
     try {
-        const data = JSON.stringify({ fileName, language, gitUrl });
+        const data = JSON.stringify(payload);
         const url = new URL(apiUrl);
 
         const req = https.request({

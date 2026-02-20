@@ -5,7 +5,7 @@ import { NowCoding } from '../src/components/NowCoding.ts';
 
 export default {
     async fetch(request: Request) {
-        const status = await kv.get<{ fileName: string, language: string, gitUrl?: string, updatedAt: number }>('vscode_status');
+        const status = await kv.get<{ fileName: string, language: string, gitUrl?: string, isIdle?: boolean, updatedAt: number }>('vscode_status');
 
         const url = new URL(request.url, "https://spotify.api.1ceit.com");
         if (url.searchParams.has("open")) {
@@ -20,8 +20,8 @@ export default {
         let language = "";
         let gitUrl = "";
 
-        // Consider the user active if updated in the last 15 minutes
-        if (status && (Date.now() - status.updatedAt < 15 * 60 * 1000)) {
+        // Consider the user active if updated in the last 15 minutes AND they are not explicitly idle
+        if (status && !status.isIdle && (Date.now() - status.updatedAt < 15 * 60 * 1000)) {
             isCoding = true;
             fileName = status.fileName;
             language = status.language;
