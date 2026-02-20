@@ -71,7 +71,9 @@ export default {
       status: 200,
       headers: {
         "Content-Type": "image/svg+xml",
-        "Cache-Control": "public, max-age=0, s-maxage=10, stale-while-revalidate=30"
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0"
       }
     });
   },
