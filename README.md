@@ -22,3 +22,7 @@
   <a href="https://discord.com/users/712684467210289204" target="blank"><img align="center" src="https://skillicons.dev/icons?i=discord" alt="CJ on Discord" height="40" width="40" /></a>
   <a href="https://1ceit.com" target="blank"><img align="center" src="https://skillicons.dev/icons?i=pug" alt="Website" height="40" width="40" /></a>
 </p>
+
+<p align="left">
+  <img src="https://spotify.api.1ceit.com/api/views?v=1" alt="Profile Views" />
+</p>
