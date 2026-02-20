@@ -30,10 +30,10 @@ async function getAuthorizationToken() {
 
 const NOW_PLAYING_ENDPOINT = `/me/player/currently-playing`;
 export async function nowPlaying(): Promise<Partial<SpotifyApi.CurrentlyPlayingResponse>> {
-  const Authorization = await getAuthorizationToken();
+  const token = await getAuthorizationToken();
   const response = await fetch(`${BASE_URL}${NOW_PLAYING_ENDPOINT}`, {
     headers: {
-      Authorization,
+      Authorization: token,
     },
   });
   if (response.status === 200) {
@@ -45,7 +45,7 @@ export async function nowPlaying(): Promise<Partial<SpotifyApi.CurrentlyPlayingR
 }
 
 const TOP_TRACKS_ENDPOINT = `/me/top/tracks`;
-export async function topTrack({ index, timeRange = 'short_term' }: { index: number, timeRange?: 'long_term'|'medium_term'|'short_term' }): Promise<SpotifyApi.TrackObjectFull | null | undefined> {
+export async function topTrack({ index, timeRange = 'short_term' }: { index: number, timeRange?: 'long_term' | 'medium_term' | 'short_term' }): Promise<SpotifyApi.TrackObjectFull | null | undefined> {
   const Authorization = await getAuthorizationToken();
   const params = new URLSearchParams();
   params.set('limit', '1');
@@ -65,5 +65,5 @@ export async function topTrack({ index, timeRange = 'short_term' }: { index: num
 }
 
 async function discard(res: Response) {
-  try { await res.arrayBuffer(); } catch {}
+  try { await res.arrayBuffer(); } catch { }
 }
