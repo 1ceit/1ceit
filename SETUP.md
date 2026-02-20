@@ -4,8 +4,6 @@ This repository is an aesthetic GitHub Profile README template that includes rea
 - **Spotify Now Playing** (via Spotify API)
 - **VS Code Now Coding** (via a custom Extension + Vercel Database)
 
-![Profile Preview](https://github.com/1ceit/1ceit/raw/main/README.md)
-
 ---
 
 ## How to Replicate This Profile
