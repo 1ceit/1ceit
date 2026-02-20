@@ -3,9 +3,9 @@
 <div align="center">
   <div style="display: flex; justify-content: center; gap: 10px;">
     <a href="https://spotify.api.1ceit.com/api/now-playing?open">
-      <img src="https://spotify.api.1ceit.com/api/now-playing" width="256" height="64" alt="Now Playing on Spotify" />
+      <img src="https://spotify.api.1ceit.com/api/now-playing" width="400" alt="Now Playing on Spotify" />
     </a>
-    <img src="https://spotify.api.1ceit.com/api/now-coding" width="256" height="64" alt="Now Coding in VS Code" />
+    <img src="https://spotify.api.1ceit.com/api/now-coding" width="400" alt="Now Coding in VS Code" />
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 import { html } from 'htm/preact';
 import { render } from 'preact-render-to-string';
 import { kv } from '@vercel/kv';
-import { NowCoding } from '../src/components/NowCoding';
+import { NowCoding } from '../src/components/NowCoding.ts';
 
 export default {
     async fetch(request: Request) {
