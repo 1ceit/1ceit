@@ -5,17 +5,27 @@ import { NowCoding } from '../src/components/NowCoding.ts';
 
 export default {
     async fetch(request: Request) {
-        const status = await kv.get<{ fileName: string, language: string, updatedAt: number }>('vscode_status');
+        const status = await kv.get<{ fileName: string, language: string, gitUrl?: string, updatedAt: number }>('vscode_status');
+
+        const url = new URL(request.url, "https://spotify.api.1ceit.com");
+        if (url.searchParams.has("open")) {
+            if (status && status.gitUrl) {
+                return Response.redirect(status.gitUrl, 302);
+            }
+            return new Response(null, { status: 200 });
+        }
 
         let isCoding = false;
         let fileName = "";
         let language = "";
+        let gitUrl = "";
 
         // Consider the user active if updated in the last 15 minutes
         if (status && (Date.now() - status.updatedAt < 15 * 60 * 1000)) {
             isCoding = true;
             fileName = status.fileName;
             language = status.language;
+            gitUrl = status.gitUrl ?? "";
         }
 
         const iconMap: Record<string, string> = {
@@ -55,6 +65,7 @@ export default {
         fileName=${fileName}
         language=${language}
         iconUrl=${iconBase64}
+        gitUrl=${gitUrl}
       />`
         );
 
