@@ -19,6 +19,7 @@ export default {
         let fileName = "";
         let language = "";
         let gitUrl = "";
+        let repoName = "";
 
         // Consider the user active if updated in the last 15 minutes AND they are not explicitly idle
         if (status && !status.isIdle && (Date.now() - status.updatedAt < 15 * 60 * 1000)) {
@@ -26,6 +27,7 @@ export default {
             fileName = status.fileName;
             language = status.language;
             gitUrl = status.gitUrl ?? "https://github.api.1ceit.com";
+            repoName = status.gitUrl ? status.gitUrl.replace(/\.git$/, '').split('/').pop() || "Local" : "Local";
         }
 
         const iconMap: Record<string, string> = {
@@ -64,6 +66,7 @@ export default {
         isCoding=${isCoding}
         fileName=${fileName}
         language=${language}
+        repoName=${repoName}
         iconUrl=${iconBase64}
         gitUrl=${gitUrl}
       />`

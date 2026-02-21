@@ -6,11 +6,12 @@ export interface Props {
   isCoding: boolean;
   fileName: string;
   language: string;
+  repoName?: string;
   iconUrl: string;
   gitUrl?: string;
 }
 
-export const NowCoding = ({ isCoding, fileName, language, iconUrl, gitUrl }: Props) => {
+export const NowCoding = ({ isCoding, fileName, language, repoName, iconUrl, gitUrl }: Props) => {
 
   const inner = html`
     <img src="${iconUrl}" width="48" height="48" style=${{ borderRadius: 3, marginLeft: 16 }} />
@@ -27,7 +28,7 @@ export const NowCoding = ({ isCoding, fileName, language, iconUrl, gitUrl }: Pro
         ${isCoding ? `Editing ${fileName}` : "Not currently coding"}
       </${Text}>
       <${Text} color="${!isCoding ? "gray" : undefined}">
-        ${isCoding ? `VS Code • ${language}` : "Visual Studio Code"}
+        ${isCoding ? `VS Code • ${language} ${repoName ? `• ${repoName}` : ""}` : "Visual Studio Code"}
       </${Text}>
     </div>
   `;
