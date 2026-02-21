@@ -88,7 +88,7 @@ export const Player = ({
 const css = `
   .paused { 
     animation-play-state: paused !important;
-    background: #e1e4e8 !important;
+    background: #FFF;
   }
 
   img:not([src]) {

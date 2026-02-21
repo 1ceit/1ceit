@@ -1,5 +1,5 @@
 {
-  "name": "natemoo-re",
+  "name": "CJ Artz",
   "private": true,
   "type": "module",
   "version": "1.0.0",
@@ -24,15 +24,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/natemoo-re/natemoo-re.git"
+    "url": "git+https://github.com/1ceit/1ceit.git"
   },
   "keywords": [],
-  "author": "Nate Moore",
-  "license": "MIT",
+  "author": "CJ Artz",
+  "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/natemoo-re/natemoo-re/issues"
+    "url": "https://github.com/1ceit/1ceit/issues"
   },
-  "homepage": "https://github.com/natemoo-re/natemoo-re#readme",
+  "homepage": "https://github.com/1ceit/1ceit#readme",
   "volta": {
     "node": "22.22.0"
   }
