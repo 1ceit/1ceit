@@ -28,7 +28,7 @@ export const NowCoding = ({ isCoding, fileName, language, repoName, iconUrl, git
         ${isCoding ? `Editing ${fileName}` : "Not currently coding"}
       </${Text}>
       <${Text} color="${!isCoding ? "gray" : undefined}">
-        ${isCoding ? `VS Code • ${language} ${repoName ? `• ${repoName}` : ""}` : "Visual Studio Code"}
+        ${isCoding ? `VS Code • ${language} ${repoName ? `• ${repoName} Workspace` : ""}` : "Visual Studio Code"}
       </${Text}>
     </div>
   `;
