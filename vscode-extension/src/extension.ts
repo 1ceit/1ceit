@@ -4,16 +4,50 @@ import { simpleGit } from 'simple-git';
 
 let statusBarItem: vscode.StatusBarItem;
 let updateInterval: NodeJS.Timeout | undefined;
+let isEnabled = true;
 
 export function activate(context: vscode.ExtensionContext) {
     statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
-    statusBarItem.command = 'now-coding.start';
-    statusBarItem.text = `$(sync) Now Coding: Active`;
+    statusBarItem.command = 'now-coding.options';
+    const updateStatusBar = () => {
+        statusBarItem.text = isEnabled ? `$(radio-tower) Now Coding` : `$(circle-slash) Now Coding (Paused)`;
+        statusBarItem.tooltip = isEnabled ? `Now Coding Tracking is Active. Click for Options.` : `Now Coding Tracking is Paused. Click for Options.`;
+    };
+
+    updateStatusBar();
     statusBarItem.show();
     context.subscriptions.push(statusBarItem);
 
-    const startCmd = vscode.commands.registerCommand('now-coding.start', () => {
-        vscode.window.showInformationMessage('Now Coding is running and syncing to ' + vscode.workspace.getConfiguration('nowCoding').get('apiUrl'));
+    context.subscriptions.push(vscode.commands.registerCommand('now-coding.toggle', () => {
+        isEnabled = !isEnabled;
+        updateStatusBar();
+        if (isEnabled) {
+            sendUpdate();
+        } else {
+            sendPayload({ isIdle: true });
+        }
+    }));
+
+    context.subscriptions.push(vscode.commands.registerCommand('now-coding.settings', () => {
+        vscode.commands.executeCommand('workbench.action.openSettings', 'nowCoding');
+    }));
+
+    const startCmd = vscode.commands.registerCommand('now-coding.options', async () => {
+        const toggleOption = isEnabled ? '$(stop-circle) Disable Tracking' : '$(play-circle) Enable Tracking';
+        const settingsOption = '$(settings-gear) Open Settings';
+
+        const selection = await vscode.window.showQuickPick([
+            { label: toggleOption, description: isEnabled ? 'Pause sending your coding status' : 'Resume sending your coding status' },
+            { label: settingsOption, description: 'Configure API URL and Secret' }
+        ], {
+            placeHolder: 'Now Coding Options'
+        });
+
+        if (selection?.label === toggleOption) {
+            vscode.commands.executeCommand('now-coding.toggle');
+        } else if (selection?.label === settingsOption) {
+            vscode.commands.executeCommand('now-coding.settings');
+        }
     });
     context.subscriptions.push(startCmd);
 
@@ -32,6 +66,8 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 async function sendUpdate() {
+    if (!isEnabled) return;
+
     const editor = vscode.window.activeTextEditor;
 
     // If no editor is open, send an explicit idle status

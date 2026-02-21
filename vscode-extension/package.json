@@ -1,5 +1,7 @@
 {
     "name": "vscode-now-coding",
+    "author": "CJ Artz",
+    "license": "GPL-3.0-or-later",
     "displayName": "Now Coding",
     "description": "Live status for GitHub README",
     "publisher": "1ceit",
@@ -22,8 +24,16 @@
     "contributes": {
         "commands": [
             {
-                "command": "now-coding.start",
-                "title": "Start Now Coding"
+                "command": "now-coding.options",
+                "title": "Now Coding: Options"
+            },
+            {
+                "command": "now-coding.toggle",
+                "title": "Now Coding: Toggle Tracking"
+            },
+            {
+                "command": "now-coding.settings",
+                "title": "Now Coding: Open Settings"
             }
         ],
         "configuration": {

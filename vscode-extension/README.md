@@ -14,4 +14,4 @@ Bring your active coding sessions directly to your GitHub Profile!
 1. Install the extension using the `.vsix` package: `code --install-extension vscode-now-coding-1.0.0.vsix`
 2. Open VS Code Settings (`Cmd` + `,`), search for **Now Coding**.
 3. Input your active Vercel API URL and Secret API Token to activate the extension.
-4. Keep coding and watch your GitHub Profile update instantly!
+4. Keep coding and watch your GitHub Profile update!
