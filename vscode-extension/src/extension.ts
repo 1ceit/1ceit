@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import * as http from 'http';
 import * as https from 'https';
 import { simpleGit } from 'simple-git';
 
@@ -126,9 +127,13 @@ function sendPayload(payload: any) {
     try {
         const data = JSON.stringify(payload);
         const url = new URL(apiUrl);
+        const isHttps = url.protocol === 'https:';
+        const transport = isHttps ? https : http;
+        const port = url.port ? parseInt(url.port) : (isHttps ? 443 : 80);
 
-        const req = https.request({
+        const req = transport.request({
             hostname: url.hostname,
+            port,
             path: url.pathname + url.search,
             method: 'POST',
             headers: {
@@ -139,7 +144,7 @@ function sendPayload(payload: any) {
         });
 
         req.on('error', (e) => {
-            console.error('Failed to sync now tracking', e);
+            console.error('Now Coding: Failed to sync', e);
         });
 
         req.write(data);

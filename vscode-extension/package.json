@@ -6,7 +6,7 @@
     "description": "Live status for GitHub README",
     "publisher": "1ceit",
     "icon": "icon.png",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/1ceit/1ceit.git"
