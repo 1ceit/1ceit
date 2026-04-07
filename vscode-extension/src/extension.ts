@@ -62,6 +62,16 @@ export function activate(context: vscode.ExtensionContext) {
         }
     }));
 
+    // Listen for tab switching
+    context.subscriptions.push(vscode.window.onDidChangeActiveTextEditor(() => {
+        sendUpdate();
+    }));
+
+    // Listen for file saving
+    context.subscriptions.push(vscode.workspace.onDidSaveTextDocument(() => {
+        sendUpdate();
+    }));
+
     // Set interval to update every 5 minutes if editor hasn't changed (to keep status 'active' in KV)
     updateInterval = setInterval(sendUpdate, 5 * 60 * 1000);
 }
