@@ -1,7 +1,9 @@
 # Hey, I'm CJ!
 
 <div align="center">
-  <a href="https://github.api.1ceit.com/api/now-playing?open"><img src="https://github.api.1ceit.com/api/now-playing?v=1" width="50%" alt="Now Playing on Spotify"/></a><a href="https://github.api.1ceit.com/api/now-coding?open"><img src="https://github.api.1ceit.com/api/now-coding?v=1" width="49%" alt="Now Coding in VS Code"/></a>
+  <a href="https://widgets.1ceit.com/1ceit/spotify?open"><img src="https://widgets.1ceit.com/1ceit/spotify?v=1" width="33%" alt="Now Playing on Spotify"/></a>
+  <a href="https://widgets.1ceit.com/1ceit/nowcoding?open"><img src="https://widgets.1ceit.com/1ceit/nowcoding?v=1" width="33%" alt="Now Coding in VS Code"/></a>
+  <a href="https://widgets.1ceit.com/1ceit/steam?open"><img src="https://widgets.1ceit.com/1ceit/steam?v=1" width="33%" alt="Now Gaming on Steam"/></a>
 </div>
 
 ***
@@ -42,6 +44,6 @@ Dynamic GitHub profile widgets that display what you’re actively working on in
   <a href="https://1ceit.com" target="blank"><img align="center" src="https://skillicons.dev/icons?i=pug" alt="Website" height="40" width="40" /></a>
 </p>
 
-<p align="left">
-  <img src="https://github.api.1ceit.com/api/views?v=1" alt="Profile Views" />
+<p align="left" width="50%>
+  <img src="https://widgets.1ceit.com/1ceit/views?v=1" alt="Profile Views"/>
 </p>
