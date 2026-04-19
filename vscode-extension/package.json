@@ -6,7 +6,7 @@
     "description": "Live status for GitHub README",
     "publisher": "1ceit",
     "icon": "icon.png",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "repository": {
         "type": "git",
         "url": "https://github.com/1ceit/1ceit.git"
@@ -42,12 +42,12 @@
                 "nowCoding.apiUrl": {
                     "type": "string",
                     "default": "https://github.api.1ceit.com/api/vscode-status",
-                    "description": "The URL of your Vercel API endpoint for VS Code Status"
+                    "description": "The URL of your API endpoint for VS Code Status"
                 },
                 "nowCoding.apiSecret": {
                     "type": "string",
                     "default": "",
-                    "description": "The secret token for your Vercel API endpoint"
+                    "description": "The secret token for your API endpoint"
                 }
             }
         }

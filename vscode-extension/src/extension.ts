@@ -5,7 +5,10 @@ import { simpleGit } from 'simple-git';
 
 let statusBarItem: vscode.StatusBarItem;
 let updateInterval: NodeJS.Timeout | undefined;
+let inactivityTimer: NodeJS.Timeout | undefined;
 let isEnabled = true;
+
+const INACTIVITY_DELAY_MS = 10 * 60 * 1000; // 10 minutes
 
 export function activate(context: vscode.ExtensionContext) {
     statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
@@ -52,28 +55,45 @@ export function activate(context: vscode.ExtensionContext) {
     });
     context.subscriptions.push(startCmd);
 
-    // Send update immediately
+    // Send update immediately and start the inactivity countdown
     sendUpdate();
+    resetInactivityTimer();
 
-    // Listen for window focus changes (important if they have multiple VS Code instances open)
+    // Listen for window focus changes — only re-broadcast on focus gain; blur does nothing
     context.subscriptions.push(vscode.window.onDidChangeWindowState((e) => {
         if (e.focused) {
             sendUpdate();
         }
     }));
 
-    // Listen for tab switching
+    // Listen for tab switching — broadcast instantly and reset inactivity timer
     context.subscriptions.push(vscode.window.onDidChangeActiveTextEditor(() => {
         sendUpdate();
+        resetInactivityTimer();
     }));
 
-    // Listen for file saving
+    // Listen for file saving — broadcast instantly and reset inactivity timer
     context.subscriptions.push(vscode.workspace.onDidSaveTextDocument(() => {
         sendUpdate();
+        resetInactivityTimer();
     }));
 
-    // Set interval to update every 5 minutes if editor hasn't changed (to keep status 'active' in KV)
-    updateInterval = setInterval(sendUpdate, 5 * 60 * 1000);
+    // Listen for text edits — silently reset inactivity timer without broadcasting
+    context.subscriptions.push(vscode.workspace.onDidChangeTextDocument(() => {
+        resetInactivityTimer();
+    }));
+
+    // Keepalive heartbeat every 30s so the API knows VS Code is still open
+    // Does NOT reset the inactivity timer — only real user activity does that
+    updateInterval = setInterval(sendUpdate, 30 * 1000);
+}
+
+function resetInactivityTimer() {
+    if (inactivityTimer) clearTimeout(inactivityTimer);
+    inactivityTimer = setTimeout(() => {
+        sendPayload({ isIdle: true });
+        inactivityTimer = undefined;
+    }, INACTIVITY_DELAY_MS);
 }
 
 async function sendUpdate() {
@@ -81,9 +101,8 @@ async function sendUpdate() {
 
     const editor = vscode.window.activeTextEditor;
 
-    // If no editor is open, send an explicit idle status
+    // If no editor is open, let the inactivity timer handle idle — don't send immediately
     if (!editor) {
-        sendPayload({ isIdle: true });
         return;
     }
 
@@ -165,7 +184,6 @@ function sendPayload(payload: any) {
 }
 
 export function deactivate() {
-    if (updateInterval) {
-        clearInterval(updateInterval);
-    }
+    if (updateInterval) clearInterval(updateInterval);
+    if (inactivityTimer) clearTimeout(inactivityTimer);
 }
