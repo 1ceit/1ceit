@@ -21,9 +21,9 @@ I discovered a profile-link service similar to Linktree that many of my friends 
 
 A leading air traffic control strip and flight management platform built specifically for the Project Flight aviation community on Roblox. PFControl V2 provides controllers and pilots with real‑time coordination, flight tracking, and a modern, responsive interface that enhances the in‑game ATC experience. It was built from the ground up and has grown into a reliable tool with over 8,000 registered users, helping organize flights, communicate efficiently, and streamline the virtual airspace management process.
 
-**[Now Coding/Now Playing Github Profiles Widgets](https://github.com/1ceit/1ceit)** 
+**[Github Readme Widgets](https://widgets.1ceit.com)** 
 
-Dynamic GitHub profile widgets that display what you’re actively working on in VS Code (Now Coding) and what you’re listening to on Spotify (Now Playing). These widgets update in real time and can be embedded directly into your GitHub README or other Markdown-supported platforms. (no longer supported)
+Dynamic GitHub profile widgets that display what you’re actively working on in VS Code (Now Coding) and what you’re listening to on Spotify (Now Playing). These widgets update in real time and can be embedded directly into your GitHub README or other Markdown-supported platforms.
 
 ***
 
