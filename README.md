@@ -72,5 +72,5 @@ A collection of dynamic widgets you can embed into your GitHub profile or any Ma
 
 ---
 <p align="left">
-  <img src="https://widgets.1ceit.com/1ceit/views?v=1" alt="Profile Views"/>
+  <img src="https://widgets.1ceit.com/1ceit/views?v=1" width="15%" alt="Profile Views"/>
 </p>
