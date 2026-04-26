@@ -6,8 +6,6 @@
   <a href="https://widgets.1ceit.com/1ceit/steam?open"><img src="https://widgets.1ceit.com/1ceit/steam?v=1" width="33%" alt="Now Gaming on Steam"/></a>
 </div>
 
-  <a href="https://widgets.1ceit.com/1ceit/spotify?open"><img src="https://widgets.1ceit.com/1ceit/spotify?v=1" alt="Now Playing on Spotify"/></a>
-
 ***
 ### Things I've built
 **[FetchP2P](https://fetch.1ceit.com)** 
