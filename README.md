@@ -39,6 +39,7 @@ I discovered a profile-link service similar to Linktree that many of my friends 
 
 # **Readme Widgets**
 A collection of dynamic widgets you can embed into your GitHub profile or any Markdown-supported platform.
+>How Webkit platforms such as IOS and Safari display `<ForeignObject>` tags. Widgets will display incorrectly when width is changed. To have widgets properly display on Webkit apend the `?static=true` query to the end of the url.
 
 ### Spotify
 
