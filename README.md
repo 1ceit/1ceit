@@ -19,7 +19,7 @@ Dynamic GitHub profile widgets that display what you’re actively working on in
 
 **[PFControl V2](https://pfcontrol.com)**
 
-A leading air traffic control strip and flight management platform built specifically for the Project Flight aviation community on Roblox. PFControl V2 provides controllers and pilots with real‑time coordination, flight tracking, and a modern, responsive interface that enhances the in‑game ATC experience. It was built from the ground up and has grown into a reliable tool with over 8,000 registered users, helping organize flights, communicate efficiently, and streamline the virtual airspace management process.
+A leading air traffic control strip and flight management platform built specifically for the Project Flight aviation community on Roblox. PFControl V2 provides controllers and pilots with real‑time coordination, flight tracking, and a modern, responsive interface that enhances the in‑game ATC experience. It was built from the ground up and has grown into a reliable tool with over 10,000 registered users, helping organize flights, communicate efficiently, and streamline the virtual airspace management process.
 
 **[Guns.lol Copy](https://profile.1ceit.com)** 
 
