@@ -1,5 +1,8 @@
 # Hey, I'm CJ!
 
+Currently a student at CNU studying cybersecurity. I work on a lot of random projects, anything i'm interested in. Here are a few of my projects!
+
+***
 <div align="center">
   <a href="https://widgets.1ceit.com/1ceit/spotify?open"><img src="https://widgets.1ceit.com/1ceit/spotify?v=1" width="33%" alt="Now Playing on Spotify"/></a>
   <a href="https://widgets.1ceit.com/1ceit/nowcoding?open"><img src="https://widgets.1ceit.com/1ceit/nowcoding?v=1" width="33%" alt="Now Coding in VS Code"/></a>
