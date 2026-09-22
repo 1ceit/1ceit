@@ -30,16 +30,6 @@ I discovered a profile-link service similar to Linktree that many of my friends 
 
 ***
 
-### Skills & Tools
-
-<p align="left">
-  <a href="https://skillicons.dev">
-   <img src="https://skillicons.dev/icons?i=html,css,sass,tailwind,js,ts,react,nextjs,nodejs,express,discordjs,mysql,postgres,mongodb,redis,sqlite,supabase,vite,webpack,yarn,git,vercel,gcp,cloudflare,docker,nginx,java,dotnet,ruby,electron,debian,elasticsearch,eclipse,ps&perline=10" alt="My Skills"/>
-  </a>
-</p>
-
-***
-
 # **Readme Widgets**
 A collection of dynamic widgets you can embed into your GitHub profile or any Markdown-supported platform.
 >How Webkit platforms such as IOS and Safari display `<ForeignObject>` tags. Widgets will display incorrectly when width is changed. To have widgets properly display on Webkit apend the `?static=true` query to the end of the url.
