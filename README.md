@@ -11,10 +11,6 @@ Currently a student at CNU studying cybersecurity. I work on a lot of random pro
 
 ***
 ### Things I've built
-**[FetchP2P](https://fetch.1ceit.com)** 
-
-A browser-based peer-to-peer file transfer app that enables direct, encrypted file sharing with zero server storage. Files are streamed between users using WebRTC, eliminating upload limits and improving speed while maintaining complete privacy.
-Built with a focus on simplicity and performance, users can share files in seconds by generating a short code; no accounts, no intermediaries, and no data persistence.
 
 **[Github Readme Widgets](https://widgets.1ceit.com)** 
 
@@ -23,6 +19,11 @@ Dynamic GitHub profile widgets that display what you’re actively working on in
 **[PFControl V2](https://pfcontrol.com)**
 
 A leading air traffic control strip and flight management platform built specifically for the Project Flight aviation community on Roblox. PFControl V2 provides controllers and pilots with real‑time coordination, flight tracking, and a modern, responsive interface that enhances the in‑game ATC experience. It was built from the ground up and has grown into a reliable tool with over 10,000 registered users, helping organize flights, communicate efficiently, and streamline the virtual airspace management process.
+
+**[FetchP2P](https://fetch.1ceit.com)** 
+
+A browser-based peer-to-peer file transfer app that enables direct, encrypted file sharing with zero server storage. Files are streamed between users using WebRTC, eliminating upload limits and improving speed while maintaining complete privacy.
+Built with a focus on simplicity and performance, users can share files in seconds by generating a short code; no accounts, no intermediaries, and no data persistence.
 
 **[Guns.lol Copy](https://profile.1ceit.com)** 
 
@@ -35,10 +36,9 @@ A collection of dynamic widgets you can embed into your GitHub profile or any Ma
 >How Webkit platforms such as IOS and Safari display `<ForeignObject>` tags. Widgets will display incorrectly when width is changed. To have widgets properly display on Webkit apend the `?static=true` query to the end of the url.
 
 ### Spotify
-
 <div align="center">
   <a href="https://widgets.1ceit.com/1ceit/spotify?open">
-    <img src="https://widgets.1ceit.com/1ceit/spotify?settings=%7B%22theme%22%3A%22custom%22%2C%22colors%22%3A%7B%22bg%22%3A%22%230A0A0A%22%2C%22track%22%3A%22%23FAFAFA%22%2C%22artist%22%3A%22%23A1A1A1%22%2C%22progress%22%3A%22%23FAFAFA%22%2C%22progressTrack%22%3A%22rgba(250%2C250%2C250%2C0.14)%22%2C%22icon%22%3A%22%23FAFAFA%22%2C%22border%22%3A%22%23262626%22%2C%22timestamp%22%3A%22%23737373%22%2C%22heroBgOverlay%22%3A%22rgba(0%2C0%2C0%2C0.65)%22%2C%22lyrics%22%3A%22%23FFFFFF%22%7D%2C%22layout%22%3A%22card%22%2C%22width%22%3A400%2C%22showCover%22%3Atrue%2C%22showProgress%22%3Atrue%2C%22showTimestamp%22%3Atrue%2C%22showStatus%22%3Atrue%2C%22showGlass%22%3Afalse%2C%22showBorder%22%3Atrue%2C%22borderRadius%22%3A15%2C%22coverBorderRadius%22%3A6%2C%22coverGrayscale%22%3Afalse%2C%22useAlbumColorTrack%22%3Atrue%2C%22useAlbumColorArtist%22%3Atrue%2C%22useAlbumColorProgress%22%3Atrue%2C%22useAlbumColorProgressTrack%22%3Atrue%2C%22useAlbumColorIcon%22%3Atrue%2C%22useAlbumColorTimestamp%22%3Atrue%2C%22useAlbumColorLyrics%22%3Atrue%2C%22showLyrics%22%3Atrue%2C%22showHeroBg%22%3Atrue%2C%22showAmbientBleed%22%3Atrue%2C%22ambientBleedSize%22%3A88%7D&v=1" width="33%" /></a>
+    <img src="https://widgets.1ceit.com/1ceit/spotify?settings=%7B%22theme%22%3A%22custom%22%2C%22colors%22%3A%7B%22bg%22%3A%22%230A0A0A%22%2C%22track%22%3A%22%23FAFAFA%22%2C%22artist%22%3A%22%23A1A1A1%22%2C%22progress%22%3A%22%23FAFAFA%22%2C%22progressTrack%22%3A%22rgba(250%2C250%2C250%2C0.14)%22%2C%22icon%22%3A%22%23FAFAFA%22%2C%22border%22%3A%22%23262626%22%2C%22timestamp%22%3A%22%23737373%22%2C%22heroBgOverlay%22%3A%22rgba(0%2C0%2C0%2C0.65)%22%2C%22lyrics%22%3A%22%23FFFFFF%22%7D%2C%22layout%22%3A%22card%22%2C%22width%22%3A400%2C%22showCover%22%3Atrue%2C%22showProgress%22%3Atrue%2C%22showTimestamp%22%3Atrue%2C%22showStatus%22%3Atrue%2C%22showGlass%22%3Atrue%2C%22showBorder%22%3Atrue%2C%22borderRadius%22%3A22%2C%22coverBorderRadius%22%3A6%2C%22coverGrayscale%22%3Afalse%2C%22useAlbumColorTrack%22%3Atrue%2C%22useAlbumColorArtist%22%3Atrue%2C%22useAlbumColorProgress%22%3Atrue%2C%22useAlbumColorProgressTrack%22%3Atrue%2C%22useAlbumColorIcon%22%3Atrue%2C%22useAlbumColorTimestamp%22%3Atrue%2C%22useAlbumColorLyrics%22%3Atrue%2C%22showLyrics%22%3Afalse%2C%22showHeroBg%22%3Atrue%2C%22showAmbientBleed%22%3Atrue%2C%22ambientBleedSize%22%3A87%7D&v=1" width="33%" /></a>
   <img src="https://widgets.1ceit.com/1ceit/spotify/top-tracks?settings=%7B%22theme%22%3A%22dark%22%2C%22colors%22%3A%7B%22bg%22%3A%22%23000000%22%2C%22track%22%3A%22%23FFFFFF%22%2C%22artist%22%3A%22%23777777%22%2C%22progress%22%3A%22%23FFFFFF%22%2C%22progressTrack%22%3A%22rgba(119%2C119%2C119%2C0.2)%22%2C%22icon%22%3A%22%23FFFFFF%22%2C%22border%22%3A%22%231A1A1A%22%2C%22timestamp%22%3A%22%23777777%22%7D%2C%22layout%22%3A%22grid%22%2C%22count%22%3A5%2C%22width%22%3A400%2C%22timeRange%22%3A%short_term%22%2C%22showArtist%22%3Atrue%2C%22showRank%22%3Atrue%2C%22showCover%22%3Atrue%2C%22showGlass%22%3Afalse%2C%22showBorder%22%3Afalse%2C%22borderRadius%22%3A37%2C%22coverBorderRadius%22%3A4%7D&v=1" width="32%" />
   <img src="https://widgets.1ceit.com/1ceit/spotify/top-artists?settings=%7B%22theme%22%3A%22dark%22%2C%22colors%22%3A%7B%22bg%22%3A%22%23000000%22%2C%22track%22%3A%22%23FFFFFF%22%2C%22artist%22%3A%22%23777777%22%2C%22progress%22%3A%22%23FFFFFF%22%2C%22progressTrack%22%3A%22rgba(119%2C119%2C119%2C0.2)%22%2C%22icon%22%3A%22%23FFFFFF%22%2C%22border%22%3A%22%231A1A1A%22%2C%22timestamp%22%3A%22%23777777%22%2C%22heroBgOverlay%22%3A%22rgba(0%2C0%2C0%2C0.50)%22%7D%2C%22layout%22%3A%22grid%22%2C%22count%22%3A5%2C%22width%22%3A400%2C%22timeRange%22%3A%22short_term%22%2C%22showRank%22%3Atrue%2C%22showCover%22%3Atrue%2C%22showGlass%22%3Atrue%2C%22showBorder%22%3Atrue%2C%22borderRadius%22%3A30%2C%22coverBorderRadius%22%3A4%7D&v=1" width="32%" />
 </div>
