@@ -3,10 +3,10 @@
     "author": "CJ Artz",
     "license": "GPL-3.0-or-later",
     "displayName": "Now Coding",
-    "description": "Live status for GitHub README",
+    "description": "Show what you’re coding on your GitHub profile with Readme Widgets",
     "publisher": "1ceit",
     "icon": "icon.png",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/1ceit/1ceit.git"
@@ -18,11 +18,16 @@
         "Other"
     ],
     "activationEvents": [
-        "onStartupFinished"
+        "onStartupFinished",
+        "onUri"
     ],
     "main": "./out/extension.js",
     "contributes": {
         "commands": [
+            {
+                "command": "now-coding.connect",
+                "title": "Now Coding: Enter Secret"
+            },
             {
                 "command": "now-coding.options",
                 "title": "Now Coding: Options"
@@ -34,6 +39,10 @@
             {
                 "command": "now-coding.settings",
                 "title": "Now Coding: Open Settings"
+            },
+            {
+                "command": "now-coding.dashboard",
+                "title": "Now Coding: Open Dashboard"
             }
         ],
         "configuration": {
@@ -41,13 +50,13 @@
             "properties": {
                 "nowCoding.apiUrl": {
                     "type": "string",
-                    "default": "https://github.api.1ceit.com/api/vscode-status",
-                    "description": "The URL of your API endpoint for VS Code Status"
+                    "default": "https://readmewidgets.dev/api/vscode-status",
+                    "description": "Where your status is sent. Leave as is unless you use Readme Widgets on a different domain."
                 },
                 "nowCoding.apiSecret": {
                     "type": "string",
                     "default": "",
-                    "description": "The secret token for your API endpoint"
+                    "description": "Your secret from the Now Coding page of the Readme Widgets dashboard."
                 }
             }
         }
@@ -64,5 +73,6 @@
     },
     "dependencies": {
         "simple-git": "^3.31.1"
-    }
+    },
+    "homepage": "https://readmewidgets.dev"
 }
