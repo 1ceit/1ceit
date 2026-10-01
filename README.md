@@ -1,4 +1,4 @@
-# Hey, I'm CJ!
+![Banner](https://readmewidgets.dev/1ceit/banner?v=1)
 
 Currently a student at CNU studying cybersecurity. I work on a lot of random projects, anything i'm interested in. Here are a few of my projects!
 
