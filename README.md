@@ -12,7 +12,7 @@ Currently a student at CNU studying cybersecurity. I work on a lot of random pro
 ***
 ### Things I've built
 
-**[Github Readme Widgets](https://widgets.1ceit.com)** 
+**[Github Readme Widgets](https://readmewidgets.dev)** 
 
 Dynamic GitHub profile widgets that display what you’re actively working on in VS Code (Now Coding) and what you’re listening to on Spotify (Now Playing). These widgets update in real time and can be embedded directly into your GitHub README or other Markdown-supported platforms.
 
